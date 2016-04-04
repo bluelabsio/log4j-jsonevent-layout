@@ -102,7 +102,7 @@ public class JSONEventLayoutV1 extends Layout {
         /**
          * Now we start injecting our own stuff.
          */
-        logstashEvent.put("source_host", hostname);
+        logstashEvent.put("HOSTNAME", hostname);
         logstashEvent.put("message", loggingEvent.getRenderedMessage());
 
         if (loggingEvent.getThrowableInformation() != null) {
@@ -132,6 +132,7 @@ public class JSONEventLayoutV1 extends Layout {
         addEventData("mdc", mdc);
         addEventData("ndc", ndc);
         addEventData("level", loggingEvent.getLevel().toString());
+        addEventData("level_value", 0);
         addEventData("thread_name", threadName);
 
         return logstashEvent.toString() + "\n";

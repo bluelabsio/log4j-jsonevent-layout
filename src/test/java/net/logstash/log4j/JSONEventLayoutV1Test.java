@@ -32,7 +32,7 @@ public class JSONEventLayoutV1Test {
 
     static final String[] logstashFields = new String[]{
             "message",
-            "source_host",
+            "HOSTNAME",
             "@timestamp",
             "@version"
     };
